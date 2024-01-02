@@ -51,4 +51,5 @@ export default {
   'menu.editor.koni': 'Koni Editor',
   'menu.About Me': 'About Me',
   'menu.Interview': 'Interview',
+  'menu.Question': 'Question',
 };

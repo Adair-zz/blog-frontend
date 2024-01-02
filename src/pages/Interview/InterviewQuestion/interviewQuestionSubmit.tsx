@@ -12,7 +12,7 @@ import { Button, message } from 'antd';
 import React, { useState } from 'react';
 import { topicOptions } from './constants';
 
-const QuestionSubmit: React.FC = () => {
+const InterviewQuestionSubmit: React.FC = () => {
   const [mdValue, setMdValue] = useState<string>('');
 
   return (
@@ -83,9 +83,9 @@ const QuestionSubmit: React.FC = () => {
         />
       </ProForm.Group>
 
-      <MDEditor value={mdValue} handleChange={setMdValue} />
+      <MDEditor value={mdValue} onChange={setMdValue} />
     </DrawerForm>
   );
 };
 
-export default QuestionSubmit;
+export default InterviewQuestionSubmit;

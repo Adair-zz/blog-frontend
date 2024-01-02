@@ -35,6 +35,12 @@ export default [
     component: './Interview/InterviewQuestion',
   },
   {
+    path: '/question',
+    name: 'Question',
+    icon: 'smile',
+    component: './Question',
+  },
+  {
     path: '/admin',
     name: 'admin',
     icon: 'crown',

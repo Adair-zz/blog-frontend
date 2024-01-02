@@ -6,13 +6,13 @@ import React, { useMemo } from 'react';
 
 interface MDEditorProps {
   value: string;
-  handleChange: (v: string) => void;
+  onChange: (v: string) => void;
 }
 
-const MDEditor: React.FC<MDEditorProps> = ({ value, handleChange }) => {
+const MDEditor: React.FC<MDEditorProps> = ({ value, onChange }) => {
   const plugins = useMemo(() => [gfm(), highlight()], []);
 
-  return <Editor value={value} plugins={plugins} onChange={handleChange} />;
+  return <Editor value={value} plugins={plugins} onChange={onChange} />;
 };
 
 export default MDEditor;

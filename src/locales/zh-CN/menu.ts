@@ -51,4 +51,5 @@ export default {
   'menu.editor.koni': '拓扑编辑器',
   'menu.About Me': '关于我',
   'menu.Interview': '面试',
+  'menu.Question': '题目',
 };

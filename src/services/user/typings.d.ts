@@ -13,7 +13,7 @@ declare namespace API {
 
   type BaseResponseLong = {
     code?: number;
-    data?: string;
+    data?: number;
     message?: string;
   };
 
@@ -42,27 +42,27 @@ declare namespace API {
   };
 
   type DeleteRequest = {
-    id?: string;
+    id?: number;
   };
 
   type getByIdParams = {
-    userId: string;
+    userId: number;
   };
 
   type getUserByIdParams = {
-    id: string;
+    id: number;
   };
 
   type getUserVOByIdParams = {
-    id: string;
+    id: number;
   };
 
   type listByIdsParams = {
-    idList: string[];
+    idList: number[];
   };
 
   type LoginUserVO = {
-    id?: string;
+    id?: number;
     userName?: string;
     userAvatar?: string;
     userRole?: string;
@@ -77,34 +77,34 @@ declare namespace API {
 
   type PageUser = {
     records?: User[];
-    total?: string;
-    size?: string;
-    current?: string;
+    total?: number;
+    size?: number;
+    current?: number;
     orders?: OrderItem[];
     optimizeCountSql?: boolean;
     searchCount?: boolean;
     optimizeJoinOfCountSql?: boolean;
-    maxLimit?: string;
+    maxLimit?: number;
     countId?: string;
-    pages?: string;
+    pages?: number;
   };
 
   type PageUserVO = {
     records?: UserVO[];
-    total?: string;
-    size?: string;
-    current?: string;
+    total?: number;
+    size?: number;
+    current?: number;
     orders?: OrderItem[];
     optimizeCountSql?: boolean;
     searchCount?: boolean;
     optimizeJoinOfCountSql?: boolean;
-    maxLimit?: string;
+    maxLimit?: number;
     countId?: string;
-    pages?: string;
+    pages?: number;
   };
 
   type User = {
-    id?: string;
+    id?: number;
     userAccount?: string;
     userPassword?: string;
     userName?: string;
@@ -128,11 +128,11 @@ declare namespace API {
   };
 
   type UserQueryRequest = {
-    currentPage?: string;
-    pageSize?: string;
+    currentPage?: number;
+    pageSize?: number;
     sortField?: string;
     sortOrder?: string;
-    id?: string;
+    id?: number;
     userName?: string;
     userRole?: string;
   };
@@ -149,14 +149,14 @@ declare namespace API {
   };
 
   type UserUpdateRequest = {
-    id?: string;
+    id?: number;
     userName?: string;
     userAvatar?: string;
     userRole?: string;
   };
 
   type UserVO = {
-    id?: string;
+    id?: number;
     userName?: string;
     userAvatar?: string;
     userRole?: string;

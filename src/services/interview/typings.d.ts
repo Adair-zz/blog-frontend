@@ -13,12 +13,12 @@ declare namespace API {
 
   type BaseResponseLong = {
     code?: number;
-    data?: string;
+    data?: number;
     message?: string;
   };
 
   type DeleteRequest = {
-    id?: string;
+    id?: number;
   };
 
   type InterviewQuestionAddRequest = {
@@ -29,6 +29,15 @@ declare namespace API {
   };
 
   type InterviewQuestionQueryRequest = {
+    id?: number;
+    language?: string;
+    topic?: string;
+    question?: string;
+    answer?: string;
+  };
+
+  type InterviewQuestionUpdateRequest = {
+    id?: number;
     language?: string;
     topic?: string;
     question?: string;
@@ -36,11 +45,12 @@ declare namespace API {
   };
 
   type InterviewQuestionVO = {
+    id?: number;
     language?: string;
     topic?: string;
     question?: string;
     answer?: string;
-    userId?: string;
+    userId?: number;
     createTime?: string;
   };
 }

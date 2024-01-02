@@ -18,7 +18,7 @@ export async function addInterviewQuestion(
 }
 
 /** 此处后端没有提供注释 POST /interview/delete */
-export async function deleteInterviewQuestion(
+export async function deleteInterviewQuestionById(
   body: API.DeleteRequest,
   options?: { [key: string]: any },
 ) {
@@ -38,6 +38,21 @@ export async function getInterviewQuestionsByQuery(
   options?: { [key: string]: any },
 ) {
   return request<API.BaseResponseListInterviewQuestionVO>('/interview/my/list/topic', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    data: body,
+    ...(options || {}),
+  });
+}
+
+/** 此处后端没有提供注释 POST /interview/update */
+export async function updateInterviewQuestion(
+  body: API.InterviewQuestionUpdateRequest,
+  options?: { [key: string]: any },
+) {
+  return request<API.BaseResponseBoolean>('/interview/update', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

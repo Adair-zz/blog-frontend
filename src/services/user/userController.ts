@@ -50,7 +50,7 @@ export async function getLoginUser(options?: { [key: string]: any }) {
 }
 
 /** 此处后端没有提供注释 GET /user/get/vo */
-export async function getUserVoById(
+export async function getUserVOById(
   // 叠加生成的Param类型 (非body参数swagger默认没有生成对象)
   params: API.getUserVOByIdParams,
   options?: { [key: string]: any },
@@ -77,7 +77,7 @@ export async function listUserByPage(body: API.UserQueryRequest, options?: { [ke
 }
 
 /** 此处后端没有提供注释 POST /user/list/page/vo */
-export async function listUserVoByPage(
+export async function listUserVOByPage(
   body: API.UserQueryRequest,
   options?: { [key: string]: any },
 ) {

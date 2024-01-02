@@ -10,8 +10,8 @@ import {
 } from '@ant-design/pro-components';
 import { Space, Typography } from 'antd';
 import React, { useState } from 'react';
-import QuestionSubmit from './QuestionSubmit';
 import { topicOptions } from './constants';
+import InterviewQuestionSubmit from './interviewQuestionSubmit';
 
 const InterviewQuestion: React.FC = () => {
   const [questionList, setQuestionList] = useState<API.InterviewQuestionVO[] | undefined>(
@@ -26,7 +26,7 @@ const InterviewQuestion: React.FC = () => {
         style={{ width: '98%', justifyContent: 'space-between', marginBottom: '30px' }}
       >
         <Typography.Title level={2}>Interview Question</Typography.Title>
-        <QuestionSubmit />
+        <InterviewQuestionSubmit />
       </Space>
 
       <LightFilter

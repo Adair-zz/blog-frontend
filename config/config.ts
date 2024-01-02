@@ -150,11 +150,17 @@ export default defineConfig({
       requestLibPath: "import { request } from '@umijs/max'",
       schemaPath: 'http://localhost:8081/api/v3/api-docs',
       projectName: 'user',
+      mock: false,
     },
     {
       requestLibPath: "import { request } from '@umijs/max'",
       schemaPath: 'http://localhost:8082/api/v3/api-docs',
       projectName: 'interview',
+    },
+    {
+      requestLibPath: "import { request } from '@umijs/max'",
+      schemaPath: 'http://localhost:8083/api/v3/api-docs',
+      projectName: 'question',
     },
   ],
   mfsu: {
