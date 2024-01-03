@@ -1,4 +1,4 @@
-import MDEditor from '@/components/MDEditor';
+import { MDEditor } from '@/components';
 import { addQuestion } from '@/services/question/questionController';
 import { MinusCircleOutlined, PlusOutlined } from '@ant-design/icons';
 import { DrawerForm, ProForm, ProFormText } from '@ant-design/pro-components';

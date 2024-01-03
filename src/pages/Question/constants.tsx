@@ -30,3 +30,18 @@ export const QuestionTagOptions = [
 ];
 
 export const AnswerTemplate = '```java\n\n```';
+
+export const languageList = [
+  {
+    value: 'java',
+    label: 'java',
+  },
+  {
+    value: 'javascript',
+    label: 'javascript',
+  },
+  {
+    value: 'mysql',
+    label: 'mysql',
+  },
+];

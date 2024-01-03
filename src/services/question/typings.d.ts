@@ -17,8 +17,18 @@ declare namespace API {
     message?: string;
   };
 
+  type BaseResponseQuestionVO = {
+    code?: number;
+    data?: QuestionVO;
+    message?: string;
+  };
+
   type DeleteRequest = {
     id?: number;
+  };
+
+  type getQuestionVOByIdParams = {
+    id: number;
   };
 
   type JudgeCase = {

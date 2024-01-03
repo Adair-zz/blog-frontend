@@ -1,4 +1,4 @@
-import MDEditor from '@/components/MDEditor';
+import { MDEditor } from '@/components';
 import { addInterviewQuestion } from '@/services/interview/interviewController';
 import { PlusOutlined } from '@ant-design/icons';
 import {

@@ -41,6 +41,10 @@ export default [
     component: './Question',
   },
   {
+    path: '/question/:id',
+    component: './Question/DoQuestion',
+  },
+  {
     path: '/admin',
     name: 'admin',
     icon: 'crown',

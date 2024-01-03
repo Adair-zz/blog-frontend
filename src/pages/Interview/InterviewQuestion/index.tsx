@@ -1,4 +1,4 @@
-import MDViewer from '@/components/MDViewer';
+import { MDViewer } from '@/components';
 import { getInterviewQuestionsByQuery } from '@/services/interview/interviewController';
 import { EditOutlined } from '@ant-design/icons';
 import {
