@@ -59,6 +59,21 @@ export async function listQuestionVOByPage(
   });
 }
 
+/** 此处后端没有提供注释 POST /question/question_submit/do */
+export async function doQuestionSubmit(
+  body: API.SubmittedQuestionAddRequest,
+  options?: { [key: string]: any },
+) {
+  return request<API.BaseResponseLong>('/question/question_submit/do', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    data: body,
+    ...(options || {}),
+  });
+}
+
 /** 此处后端没有提供注释 POST /question/update */
 export async function updateQuestion(
   body: API.QuestionUpdateRequest,

@@ -27,8 +27,16 @@ declare namespace API {
     id?: number;
   };
 
+  type getQuestionByIdParams = {
+    questionId: number;
+  };
+
   type getQuestionVOByIdParams = {
     id: number;
+  };
+
+  type getSubmittedQuestionByIdParams = {
+    submittedQuestionId: number;
   };
 
   type JudgeCase = {
@@ -53,6 +61,19 @@ declare namespace API {
     maxLimit?: number;
     countId?: string;
     pages?: number;
+  };
+
+  type Question = {
+    id?: number;
+    title?: string;
+    content?: string;
+    tags?: string;
+    answer?: string;
+    judgeCase?: string;
+    userId?: number;
+    createTime?: string;
+    updateTime?: string;
+    idDelete?: number;
   };
 
   type QuestionAddRequest = {
@@ -94,5 +115,24 @@ declare namespace API {
     userId?: number;
     createTime?: string;
     updateTime?: string;
+  };
+
+  type SubmittedQuestion = {
+    id?: number;
+    language?: string;
+    code?: string;
+    judgeInfo?: string;
+    status?: number;
+    questionId?: number;
+    userId?: number;
+    createTime?: string;
+    updateTime?: string;
+    idDelete?: number;
+  };
+
+  type SubmittedQuestionAddRequest = {
+    language?: string;
+    code?: string;
+    questionId?: number;
   };
 }
