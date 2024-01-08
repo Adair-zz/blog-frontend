@@ -12,8 +12,9 @@ import { Button, message } from 'antd';
 import React, { useState } from 'react';
 import { topicOptions } from './constants';
 
-const InterviewQuestionSubmit: React.FC = () => {
+const AddInterviewQuestion: React.FC = () => {
   const [mdValue, setMdValue] = useState<string>('');
+  const [form] = ProForm.useForm();
 
   return (
     <DrawerForm
@@ -25,6 +26,7 @@ const InterviewQuestionSubmit: React.FC = () => {
           添加面试题目
         </Button>
       }
+      form={form}
       onFinish={async (values: any) => {
         if (!mdValue || mdValue.trim() === '') {
           message.error('Answer cannot be empty!');
@@ -38,6 +40,8 @@ const InterviewQuestionSubmit: React.FC = () => {
             answer: mdValue,
           });
           if (response.code === 0) {
+            setMdValue('');
+            form.resetFields();
             message.success('提交成功');
           } else {
             message.error('提交失败');
@@ -47,8 +51,7 @@ const InterviewQuestionSubmit: React.FC = () => {
         }
       }}
       initialValues={{
-        name: 'None',
-        useMode: 'chapter',
+        question: '',
       }}
     >
       <ProForm.Group>
@@ -88,4 +91,4 @@ const InterviewQuestionSubmit: React.FC = () => {
   );
 };
 
-export default InterviewQuestionSubmit;
+export default AddInterviewQuestion;

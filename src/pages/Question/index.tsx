@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 
 import { listQuestionVOByPage } from '@/services/question/questionController';
 import { useNavigate } from '@umijs/max';
-import QuestionSubmit from './questionSubmit';
+import AddQuestion from './addQuestion';
 
 const Question: React.FC = () => {
   const initSearchParams = {
@@ -49,7 +49,7 @@ const Question: React.FC = () => {
         style={{ width: '98%', justifyContent: 'space-between', marginBottom: '30px' }}
       >
         <Typography.Title level={2}>我的题目</Typography.Title>
-        <QuestionSubmit />
+        <AddQuestion />
       </Space>
 
       <ProList<API.QuestionVO>
@@ -97,6 +97,7 @@ const Question: React.FC = () => {
           total: total,
         }}
         loading={loading}
+        style={{ width: '98%' }}
       />
     </div>
   );

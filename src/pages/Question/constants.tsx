@@ -45,3 +45,12 @@ export const languageList = [
     label: 'mysql',
   },
 ];
+
+export const javaCodeTemplate = `import java.util.*;
+
+class Main {
+  public static void main(String[] args) {
+      
+  }
+}
+`;

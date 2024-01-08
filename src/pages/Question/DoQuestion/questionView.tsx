@@ -1,8 +1,7 @@
 import { MDViewer } from '@/components';
 import { getQuestionVOById } from '@/services/question/questionController';
-import { Card, Skeleton, Typography, message } from 'antd';
+import { Card, Skeleton, Tabs, Typography, message } from 'antd';
 import React, { useEffect, useState } from 'react';
-import AnswerView from './answerView';
 
 interface QuestionViewProps {
   id: string;
@@ -37,20 +36,40 @@ const QuestionView: React.FC<QuestionViewProps> = (props) => {
   return (
     <>
       {questionVO && (
-        <Card
-          style={{ ...props.style }}
-          actions={[
-            <AnswerView
-              key={questionVO.id}
-              answer={questionVO.answer === undefined ? '' : questionVO.answer}
-            />,
+        <Tabs
+          items={[
+            {
+              key: 'content',
+              label: 'Content',
+              children: (
+                <Card style={{ ...props.style }}>
+                  <Skeleton loading={loading} active>
+                    <Typography.Title level={2}>{questionVO.title}</Typography.Title>
+                    <MDViewer value={questionVO.content === undefined ? '' : questionVO.content} />
+                  </Skeleton>
+                </Card>
+              ),
+            },
+            {
+              key: 'answer',
+              label: 'Solution',
+              children: (
+                <Card style={{ ...props.style }}>
+                  <MDViewer value={questionVO.answer === undefined ? '' : questionVO.answer} />
+                </Card>
+              ),
+            },
+            {
+              key: 'submissions',
+              label: 'Submissions',
+              children: (
+                <Card style={{ ...props.style }}>
+                  <Typography.Text>In Progress</Typography.Text>
+                </Card>
+              ),
+            },
           ]}
-        >
-          <Skeleton loading={loading} active>
-            <Typography.Title>{questionVO.title}</Typography.Title>
-            <MDViewer value={questionVO.content === undefined ? '' : questionVO.content} />
-          </Skeleton>
-        </Card>
+        />
       )}
     </>
   );

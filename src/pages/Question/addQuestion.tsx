@@ -3,12 +3,15 @@ import { addQuestion } from '@/services/question/questionController';
 import { MinusCircleOutlined, PlusOutlined } from '@ant-design/icons';
 import { DrawerForm, ProForm, ProFormText } from '@ant-design/pro-components';
 import { Button, Form, Input, Select, Space, Typography, message } from 'antd';
+import { useForm } from 'antd/es/form/Form';
 import React, { useState } from 'react';
 import { AnswerTemplate, QuestionTagOptions } from './constants';
 
-const QuestionSubmit: React.FC = () => {
+const AddQuestion: React.FC = () => {
   const [contentValue, setContentValue] = useState<string>('');
   const [answerValue, setAnswerValue] = useState<string>(AnswerTemplate);
+  const [form] = useForm();
+
   const handleChange = (value: string) => {
     console.log(`selected ${value}`);
   };
@@ -20,9 +23,10 @@ const QuestionSubmit: React.FC = () => {
       trigger={
         <Button type="primary">
           <PlusOutlined />
-          添加面试题目
+          添加代码题目
         </Button>
       }
+      form={form}
       onFinish={async (values: any) => {
         try {
           const response = await addQuestion({
@@ -33,6 +37,9 @@ const QuestionSubmit: React.FC = () => {
             judgeCase: values.judgeCase,
           });
           if (response.code === 0) {
+            setContentValue('');
+            setAnswerValue('');
+            form.resetFields();
             message.success('题目提交成功!');
           } else {
             message.error('题目提交失败!');
@@ -129,4 +136,4 @@ const QuestionSubmit: React.FC = () => {
   );
 };
 
-export default QuestionSubmit;
+export default AddQuestion;
